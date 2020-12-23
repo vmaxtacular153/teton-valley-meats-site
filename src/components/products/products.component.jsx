@@ -3,24 +3,8 @@ import { Grid } from '@material-ui/core';
 import Product from '../product/product.component';
 import useStyles from './products.styles';
 
-const products = [
-    {
-        id: 1,
-        name: 'Italian Sausage',
-        description: 'Handmade classic Italian Sausage',
-        price: '$5.99',
-        image: 'https://picsum.photos/200',
-    },
-    {
-        id: 2,
-        name: 'Chorizo Sausage',
-        description: 'Handmade classic Spanish Sausage',
-        price: '$6.99',
-        image: 'https://picsum.photos/200',
-    }
-];
 
-const Products = () => {
+const Products = ({ products }) => {
     const classes = useStyles();
     return(
         <main className={classes.content}>
