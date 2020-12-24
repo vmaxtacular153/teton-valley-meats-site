@@ -11,7 +11,7 @@ import Logo from '../../assets/TVMtransparent.png';
 import makeStyles from './navbar.styles'; 
 
 
-const Navbar = () => {
+const Navbar = ({ totalItems }) => {
     const classes = makeStyles();
     return (
         <>
@@ -24,7 +24,7 @@ const Navbar = () => {
                     <div className={classes.grow} /> 
                     <div className={classes.button}>
                         <IconButton aria-label='Show cart items' color='inherit'>
-                            <Badge badgeContent={2} color='secondary' >
+                            <Badge badgeContent={totalItems} color='secondary' >
                                 <ShoppingCart />
                             </Badge>
                         </IconButton>
