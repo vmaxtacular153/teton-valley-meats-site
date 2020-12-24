@@ -1,4 +1,5 @@
 import React from 'react';
+import CartItem from '../cart-item/cart-item.component';
 import { Container, 
     Typography, 
     Button, 
@@ -18,7 +19,7 @@ const Cart = ({ cart }) => {
             <Grid container spacing={3}>
                 {cart.line_items.map((item) => (
                     <Grid item xs={12} sm={4} key={item.id}>
-                        <div>{item.name}</div>
+                        <CartItem item={item} />
                     </Grid>
                 ))}
             </Grid>
@@ -55,6 +56,7 @@ const Cart = ({ cart }) => {
             <div className={classes.toolbar} />
             <Typography className={classes.title}
                 variant='h3'
+                gutterBottom
             >
             Your Shopping Cart
             </Typography>
