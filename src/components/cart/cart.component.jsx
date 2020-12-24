@@ -45,7 +45,10 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
                         >
                             Empty Cart
                         </Button>
-                        <Button className={classes.checkoutButton}
+                        <Button 
+                            component={Link}
+                            to='/checkout'
+                            className={classes.checkoutButton}
                             size='large'
                             type='button'
                             variant='contained'
