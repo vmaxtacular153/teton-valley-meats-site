@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Paper, 
     Stepper, 
     Step, 
@@ -7,13 +7,51 @@ import { Paper,
     CircularProgress, 
     Divider, 
     Button } from '@material-ui/core';
+import { commerce } from '../../lib/commerce';    
+import AddressForm from '../address-form/address-form.component';
+import PaymentForm from '../payment-form/payment-form.component';   
 import useStyles from './checkout.styles';    
 
 const steps = ['Shipping address', 'Payment details'];    
 
-const Checkout = () => {
+const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     const [activeStep, setActiveStep] = useState(0);
+    const [checkoutToken, setCheckoutToken] = useState(null);
+    const [shippingData, setShippingData] = useState({});
     const classes = useStyles();
+
+    useEffect(() => {
+        const generateToken = async () => {
+            try {
+                const token = await commerce.checkout.generateToken(cart.id, {type: 'cart'});
+                console.log(token);
+                setCheckoutToken(token);
+            } catch (error) {
+
+            }
+        };
+
+        generateToken();
+    }, [cart]);
+
+    const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1 );
+    const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1 );
+
+    const next = (data) => {
+        setShippingData(data);
+
+        nextStep();
+    }
+
+    const Confirmation = () => (
+        <div>
+            Confirmation
+        </div>
+    );
+
+    const Form = () => activeStep === 0
+        ? <AddressForm checkoutToken={checkoutToken} next={next} />
+        : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} />
 
     return (
         <>
@@ -28,10 +66,11 @@ const Checkout = () => {
                         </Step>
                     ))}
                 </Stepper>
+                {activeStep === steps.length ? <Confirmation /> : checkoutToken && <Form /> }
               </Paper>
           </main>  
         </>
-    )
-}
+    );
+};
 
 export default Checkout;
