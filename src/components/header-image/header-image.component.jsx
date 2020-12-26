@@ -20,9 +20,9 @@ const useStyles = makeStyles((theme) => ({
         letterSpacing: '0.2rem',
     },
     logo: {
-        maxWidth: '200px',
+        maxWidth: '250px',
         paddingTop: '25px',
-        paddingLeft: '10px',
+        paddingLeft: '20px',
     },
     subtitle: {
         marginTop: '1rem',
@@ -41,7 +41,7 @@ const HeaderImage = () => {
             </div>
             <div className={classes.overlayText}>
                 <Typography variant='h1' className={classes.title}>Teton Valley Meats</Typography>
-                <Typography variant='h5' className={classes.subtitle}>Craft butcher shop in the heart of the Teton Valley</Typography>
+                <Typography variant='h5' className={classes.subtitle}>Craft. Handmade. The Real deal local butcher shop</Typography>
             </div>
         </div>
     )
