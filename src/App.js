@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
-import { Navbar, Products, Cart, Checkout } from './components';
+import { Navbar, HeaderImage, Products, Cart, Checkout, Footer } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import HeaderImage from './components/header-image/header-image.component';
+
 
 const App = () => {
     const [products, setProducts] = useState([]);
@@ -94,7 +94,9 @@ const App = () => {
                     </Route>     
                 </Switch>
             </div>
+            <Footer />
         </Router>
+        
     );
 };
 
