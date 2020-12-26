@@ -46,7 +46,7 @@ const AddressForm = ({ checkoutToken, next }) => {
         <>
             <Typography variant='h6' gutterBottom>Shipping Address</Typography>
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit((data) => next({...data, shippingCountry, shippingSubdivision}))}>
+                <form onSubmit={methods.handleSubmit((data) => next({...data}))}>
                     <Grid container spacing={3}>
                         <FormInput name='firstName' label='First name' />
                         <FormInput name='lastName' label='Last name' />
@@ -54,7 +54,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                         <FormInput name='email' label='Email' />
                         <FormInput name='city' label='City' />
                         <FormInput name='zipcode' label='Zipcode' />
-                        <Grid item xs={12} sm={6}>
+                         <Grid item xs={12} sm={6}>
                             <InputLabel>Shipping Country</InputLabel>
                             <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
                                 {countries.map((country) => (
@@ -73,7 +73,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                                     </MenuItem>
                                 ))}
                             </Select>
-                        </Grid>     
+                        </Grid>      
                     </Grid>  
                     <br />
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>

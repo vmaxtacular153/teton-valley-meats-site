@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, CssBaseline } from '@material-ui/core';
 import Logo from '../../assets/TVMtransparent.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +35,9 @@ const useStyles = makeStyles((theme) => ({
 const HeaderImage = () => {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <>
+        <CssBaseline />
+            <div className={classes.root}>
             <div className={classes.logo}>
             <img src={Logo} alt='Teton Valley Meats' className={classes.logo} />
             </div>
@@ -44,6 +46,8 @@ const HeaderImage = () => {
                 <Typography variant='h5' className={classes.subtitle}>Craft. Handmade. The Real deal local butcher shop</Typography>
             </div>
         </div>
+        </>
+        
     )
 }
 

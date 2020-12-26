@@ -29,9 +29,7 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
            name: 'Primary',
            street: shippingData.address1,
            town_city: shippingData.city,
-           county_state: shippingData.shippingSubdivision,
            postal_zip_code: shippingData.zipcode,
-           country: shippingData.shippingCountry,
          },
          payment: {
            gateway: 'stripe',
@@ -46,7 +44,6 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
       nextStep();
 
     }
-
   };
 
     return (
