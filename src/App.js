@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
-import { Navbar, HeaderImage, Products, Cart, Checkout, Footer } from './components';
+import { Navbar, HeaderImage, AboutUs, Products, Cart, Checkout, Footer } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
@@ -72,6 +72,7 @@ const App = () => {
             <div>
                 <Navbar totalItems={cart.total_items} />
                 <HeaderImage />
+                <AboutUs />
                 <Switch>
                     <Route exact path='/'>
                         <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />  

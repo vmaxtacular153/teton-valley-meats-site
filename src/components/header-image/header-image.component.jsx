@@ -46,8 +46,7 @@ const HeaderImage = () => {
                 <Typography variant='h5' className={classes.subtitle}>Craft. Handmade. The Real deal local butcher shop</Typography>
             </div>
         </div>
-        </>
-        
+        </> 
     )
 }
 
