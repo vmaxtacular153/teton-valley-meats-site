@@ -7,6 +7,7 @@ export default makeStyles(() => ({
         backgroundImage: `url(${Image})`,
         backgroundPosition: 'center',
         backgroundSize: '100%',
+        color: '#444444',
     },
     title: {
         marginTop: '5%',
