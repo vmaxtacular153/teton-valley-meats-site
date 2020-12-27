@@ -18,6 +18,11 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'uppercase',
         fontWeight: '900',
         letterSpacing: '0.2rem',
+        [theme.breakpoints.down('xs')]: {
+            color: '#444444',
+            paddingTop: '5rem',
+            paddingBottom: '1rem',
+        },
     },
     logo: {
         maxWidth: '250px',
@@ -26,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
     subtitle: {
         marginTop: '1rem',
-        paddingBottom: '6rem',
+        paddingBottom: '7rem',
         fontWeight: '700',
         letterSpacing: '0.2rem',
     },
@@ -38,14 +43,14 @@ const HeaderImage = () => {
         <>
         <CssBaseline />
             <div className={classes.root}>
-            <div className={classes.logo}>
-            <img src={Logo} alt='Teton Valley Meats' className={classes.logo} />
+                <div className={classes.logo}>
+                    <img src={Logo} alt='Teton Valley Meats' className={classes.logo} />
+                </div>
+                <div className={classes.overlayText}>
+                    <Typography variant='h1' className={classes.title}>Teton Valley Meats</Typography>
+                    <Typography variant='h5' className={classes.subtitle}>Craft. Handmade. The Real deal local butcher shop</Typography>
+                </div>
             </div>
-            <div className={classes.overlayText}>
-                <Typography variant='h1' className={classes.title}>Teton Valley Meats</Typography>
-                <Typography variant='h5' className={classes.subtitle}>Craft. Handmade. The Real deal local butcher shop</Typography>
-            </div>
-        </div>
         </> 
     )
 }
