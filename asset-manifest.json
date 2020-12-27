@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/teton-valley-meats-site/static/js/main.8d1639f1.chunk.js",
+    "main.js.map": "/teton-valley-meats-site/static/js/main.8d1639f1.chunk.js.map",
+    "runtime-main.js": "/teton-valley-meats-site/static/js/runtime-main.c58055ba.js",
+    "runtime-main.js.map": "/teton-valley-meats-site/static/js/runtime-main.c58055ba.js.map",
+    "static/js/2.8f25ef04.chunk.js": "/teton-valley-meats-site/static/js/2.8f25ef04.chunk.js",
+    "static/js/2.8f25ef04.chunk.js.map": "/teton-valley-meats-site/static/js/2.8f25ef04.chunk.js.map",
+    "index.html": "/teton-valley-meats-site/index.html",
+    "static/js/2.8f25ef04.chunk.js.LICENSE.txt": "/teton-valley-meats-site/static/js/2.8f25ef04.chunk.js.LICENSE.txt",
+    "static/media/TVMtransparent.af019290.png": "/teton-valley-meats-site/static/media/TVMtransparent.af019290.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c58055ba.js",
+    "static/js/2.8f25ef04.chunk.js",
+    "static/js/main.8d1639f1.chunk.js"
+  ]
+}
